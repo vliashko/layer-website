@@ -16,6 +16,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          deploy_branch: gh-pages  # The branch to deploy to
-          folder: ./  # Folder to deploy, in this case, the root directory where your `index.html` is located
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Ensure this is set in your repository secrets
+          publish_branch: gh-pages  # The branch to deploy to
+          publish_dir: ./  # Folder to deploy, in this case, the root directory where your `index.html` is located
