@@ -33,6 +33,7 @@
             display: flex;
             justify-content: center; /* Центрируем меню */
             align-items: center;
+            position: relative;
         }
         nav a {
             color: white;
@@ -137,6 +138,7 @@
                 top: 60px;
                 left: 0;
                 padding: 1rem 0;
+                z-index: 100;
             }
             .nav-links a {
                 margin: 1rem 0;
@@ -156,6 +158,10 @@
             }
             section h2 {
                 font-size: 1.5rem;
+            }
+
+            section h3 {
+                font-size: 1rem;
             }
             .services {
                 flex-direction: column;
@@ -201,8 +207,13 @@
             .container {
                 padding: 1rem;
             }
+
             section h2 {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
+            }
+
+            section h3 {
+                font-size: 0.9rem;
             }
             .services {
                 gap: 0.5rem;
