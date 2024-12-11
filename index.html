@@ -32,6 +32,7 @@
             display: flex;
             justify-content: center;
             padding: 1rem 0;
+            flex-wrap: wrap;
         }
         nav a {
             color: white;
@@ -93,6 +94,68 @@
             text-align: center;
             padding: 1rem 0;
         }
+
+        /* Медиазапросы для адаптивности */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            nav a {
+                margin: 0.5rem;
+                font-size: 1rem;
+            }
+            .container {
+                padding: 1rem;
+            }
+            section h2 {
+                font-size: 1.5rem;
+            }
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+            .service {
+                flex: 1 1 100%;
+                margin-bottom: 1rem;
+            }
+            .contact p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+            header p {
+                font-size: 0.9rem;
+            }
+            nav {
+                padding: 0.5rem 0;
+            }
+            nav a {
+                margin: 0.5rem 0;
+                font-size: 0.9rem;
+            }
+            .container {
+                padding: 1rem;
+            }
+            section h2 {
+                font-size: 1.2rem;
+            }
+            .services {
+                gap: 0.5rem;
+            }
+            .service {
+                flex: 1 1 100%;
+            }
+            .contact p {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -104,7 +167,7 @@
 
     <nav>
         <a href="#about" class="tab-link">Обо мне</a>
-        <a href="#services" class="tab-link">Услуги</a>
+        <a href="#services" class="tab-link">Юридическая помощь</a>
         <a href="#personal-data" class="tab-link">Персональные данные</a>
         <a href="#contacts" class="tab-link">Контакты</a>
     </nav>
@@ -117,7 +180,7 @@
         </section>
 
         <section id="services">
-            <h2>Услуги</h2>
+            <h2>Юридическая Помощь</h2>
             <div class="services">
                 <div class="service">
                     <h3>Уголовные дела</h3>
@@ -142,7 +205,7 @@
 
         <section id="personal-data">
             <h2>Персональные данные</h2>
-            <p>В данном разделе предоставляется информация о правилах обработки персональных данных, которые применяются в рамках оказания юридических услуг.</p>
+            <p>В данном разделе предоставляется информация о правилах обработки персональных данных, которые применяются в рамках оказания юридической помощи.</p>
             <p>Мы гарантируем конфиденциальность и соблюдение законодательства при работе с личной информацией клиентов.</p>
         </section>
 
