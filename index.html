@@ -29,10 +29,10 @@
         nav {
             background-color: #333;
             color: white;
+            padding: 1rem 0;
             display: flex;
             justify-content: center;
-            padding: 1rem 0;
-            flex-wrap: wrap;
+            align-items: center;
         }
         nav a {
             color: white;
@@ -53,6 +53,10 @@
         }
         section {
             margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;  /* Центрируем секции по горизонтали */
+            text-align: center;   /* Центрируем текст внутри секции */
         }
         section h2 {
             color: #1E1E1E;
@@ -63,7 +67,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
-            justify-content: space-between;
+            justify-content: center; /* Центрируем карточки услуг */
         }
         .service {
             background-color: white;
@@ -95,16 +99,56 @@
             padding: 1rem 0;
         }
 
+        /* Стили для гамбургер-меню */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 0.3rem;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+        }
+        .nav-links a {
+            margin: 0 1rem;
+        }
+
         /* Медиазапросы для адаптивности */
         @media (max-width: 768px) {
+            nav a {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 1rem 0;
+            }
+            .nav-links a {
+                margin: 1rem 0;
+                font-size: 1.2rem;
+            }
+            .nav-links.active {
+                display: flex;
+            }
             header h1 {
                 font-size: 1.5rem;
             }
             header p {
-                font-size: 1rem;
-            }
-            nav a {
-                margin: 0.5rem;
                 font-size: 1rem;
             }
             .container {
@@ -121,23 +165,37 @@
                 flex: 1 1 100%;
                 margin-bottom: 1rem;
             }
-            .contact p {
-                font-size: 0.9rem;
-            }
         }
 
         @media (max-width: 480px) {
+            nav a {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 1rem 0;
+            }
+            .nav-links a {
+                margin: 1rem 0;
+                font-size: 1rem;
+            }
+            .nav-links.active {
+                display: flex;
+            }
             header h1 {
                 font-size: 1.2rem;
             }
             header p {
-                font-size: 0.9rem;
-            }
-            nav {
-                padding: 0.5rem 0;
-            }
-            nav a {
-                margin: 0.5rem 0;
                 font-size: 0.9rem;
             }
             .container {
@@ -166,10 +224,17 @@
     </header>
 
     <nav>
-        <a href="#about" class="tab-link">Обо мне</a>
-        <a href="#services" class="tab-link">Юридическая помощь</a>
-        <a href="#personal-data" class="tab-link">Персональные данные</a>
-        <a href="#contacts" class="tab-link">Контакты</a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links">
+            <a href="#about" class="tab-link">Обо мне</a>
+            <a href="#services" class="tab-link">Услуги</a>
+            <a href="#personal-data" class="tab-link">Персональные данные</a>
+            <a href="#contacts" class="tab-link">Контакты</a>
+        </div>
     </nav>
 
     <div class="container">
@@ -230,6 +295,11 @@
                 link.classList.add('active');
             });
         });
+
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
     </script>
 </body>
 </html>
