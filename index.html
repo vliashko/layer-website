@@ -720,10 +720,11 @@
 
         function toggleTable(tableId) {
             const tableContainer = document.getElementById(tableId);
-            const toggleBtn = document.querySelector('.toggle-btn');
 
             if (tableContainer) {
-                if (tableContainer.style.display === 'none') {
+                const currentDisplay = window.getComputedStyle(tableContainer).display;
+
+                if (currentDisplay === 'none') {
                     tableContainer.style.display = 'block';
                 } else {
                     tableContainer.style.display = 'none';
@@ -732,6 +733,7 @@
                 console.error(`Element with ID "${tableId}" not found.`);
             }
         }
+
     </script>
 </body>
 </html>
