@@ -122,9 +122,6 @@
 
         /* Медиазапросы для адаптивности */
         @media (max-width: 768px) {
-            nav a {
-                display: none;
-            }
             .hamburger {
                 display: flex;
             }
@@ -173,9 +170,6 @@
         }
 
         @media (max-width: 480px) {
-            nav a {
-                display: none;
-            }
             .hamburger {
                 display: flex;
             }
@@ -301,7 +295,6 @@
             link.addEventListener('click', () => {
                 links.forEach(link => link.classList.remove('active'));
                 link.classList.add('active');
-                // Close the mobile menu after clicking a link
                 const navLinks = document.querySelector('.nav-links');
                 navLinks.classList.remove('active');
             });
