@@ -64,43 +64,83 @@
          background-color: #f9f9f9;
          color: #333;
          }
-         /* Стили для хедера */
          header {
-         background-color: #1E1E1E; /* Цвет фона */
-         color: #ffffff; /* Цвет текста */
-         padding: 20px;
-         text-align: center;
-         }
-         .header-container {
-         display: flex; /* Размещение элементов в строку */
-         justify-content: space-between; /* Распределение пространства */
-         align-items: center; /* Вертикальное центрирование */
-         flex-wrap: wrap; /* Чтобы контент переносился при маленьком экране */
-         }
-         .header-text h1 {
-         font-size: 36px;
-         margin: 0;
-         color: #f5b942; /* Акцентный цвет для заголовка */
-         }
-         .header-text p {
-         margin: 5px 0;
-         font-size: 18px;
-         color: #cccccc;
-         }
-         .header-image img {
-         max-width: 250px; /* Максимальный размер картинки */
-         height: auto; /* Сохранение пропорций */
-         border-radius: 10px; /* Скругление углов */
-         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Тень для изображения */
-         }
-         header h1 {
-         font-size: 2rem;
-         margin: 0;
-         }
-         header p {
-         font-size: 1.2rem;
-         margin: 0.5rem 0 0;
-         }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1E1E1E;
+    color: white;
+}
+
+.header-text {
+    max-width: 60%;
+}
+
+.header-text h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.header-text p {
+    font-size: 1.2rem;
+}
+
+.header-image img {
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+.consultation {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.consultation p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons .icon img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons .icon img:hover {
+    transform: scale(1.2);
+}
+
+/* Иконки */
+.icon.viber img {
+    background-color: #f5b942;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.icon.telegram img {
+    background-color: #f5b942;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.icon.email img {
+    background-color: #f5b942; /* Цвет для Email */
+    border-radius: 50%;
+    padding: 5px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
          nav {
          background-color: #333;
          color: white;
@@ -283,12 +323,43 @@
          .nav-links.active {
          display: flex;
          }
-         header h1 {
-         font-size: 1.5rem;
-         }
-         header p {
-         font-size: 1rem;
-         }
+         header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-text {
+        max-width: 100%;
+    }
+
+    .header-text h1 {
+        font-size: 2rem; /* Уменьшаем размер шрифта для заголовка */
+    }
+
+    .header-text p {
+        font-size: 1rem; /* Уменьшаем размер шрифта для текста */
+    }
+
+    .header-image img {
+        max-width: 120px; /* Уменьшаем размер изображения */
+    }
+
+    .consultation {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .social-icons {
+        flex-direction: row;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .social-icons .icon img {
+        width: 25px; /* Уменьшаем размер иконок */
+        height: 25px;
+    }
          .container {
          padding: 1rem;
          }
@@ -329,12 +400,22 @@
          .nav-links.active {
          display: flex;
          }
-         header h1 {
-         font-size: 1.2rem;
-         }
-         header p {
-         font-size: 0.9rem;
-         }
+         .header-text h1 {
+        font-size: 1.5rem; /* Еще меньше заголовок */
+    }
+
+    .header-text p {
+        font-size: 0.9rem; /* Еще меньше текст */
+    }
+
+    .social-icons .icon img {
+        width: 20px; /* Уменьшаем иконки еще больше */
+        height: 20px;
+    }
+
+    .consultation p {
+        font-size: 1rem; /* Уменьшаем размер шрифта для текста */
+    }
          .container {
          padding: 1rem;
          }
@@ -357,16 +438,31 @@
       </style>
    </head>
    <body>
-      <header>
-         <div class="header-text">
+    <header>
+        <div class="header-text">
             <h1>АДВОКАТ</h1>
             <p>НЕМЧЕНКО АНАСТАСИЯ АЛЕКСЕЕВНА</p>
             <p>"Моя работа - защита Ваших прав и интересов на профессиональной основе"</p>
-         </div>
-         <div class="header-image">
+        </div>
+        <div class="header-image">
             <img src="advokat.jpg" alt="Адвокат Немченко Анастасия">
-         </div>
-      </header>
+        </div>
+        <div class="consultation">
+            <p>Для консультации:</p>
+            <p>Телефон: <a href="tel:+375291145488">+375 29 114 54 88</a></p>
+            <div class="social-icons">
+                <a href="viber://chat?number=+375291145488" class="icon viber" title="Viber">
+                    <img src="viber.png" alt="Viber">
+                </a>
+                <a href="https://t.me/ad_nemchenko" class="icon telegram" title="Telegram">
+                    <img src="telegram.png" alt="Telegram">
+                </a>
+                <a href="mailto:AAN@advokat-nemchenko.by" class="icon email" title="Email">
+                    <img src="apple.png" alt="Email">
+                </a>
+            </div>
+        </div>
+    </header>    
       <nav>
          <div class="hamburger" onclick="toggleMenu()">
             <div></div>
@@ -431,421 +527,423 @@
          </section>
          <section id="personal-data">
             <h2>Персональные данные</h2>
-         </section>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;text-align:center;'><strong><span style='font-family:"Times New Roman",serif;'>ПОЛИТИКА ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ АДВОКАТОМ НЕМЧЕНКО А.А.</span></strong></p>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>1. В этом документе Вы можете узнать:</span></p>
-         <ul style="list-style-type: disc;">
-            <li><span style='font-family:"Times New Roman",serif;'>для каких целей адвокат обрабатывает Ваши персональные данные, на каком правовом основании;</span></li>
-            <li><span style='font-family:"Times New Roman",serif;'>какие у Вас есть права, связанные с обработкой персональных данных;</span></li>
-            <li><span style='font-family:"Times New Roman",serif;'>как Вы можете реализовать свои права, связанные с обработкой персональных данных.</span></li>
-         </ul>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><em><span style='font-family:"Times New Roman",serif;'>Политика обработки персональных данных разрабатывается для исполнения требования Закона Республики Беларусь от 7 мая 2021 г. № 99-З &ldquo;О защите персональных данных&rdquo; (далее - Закон о защите персональных данных).</span></em></p>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>2. Ваши персональные данные обрабатываются как с использованием средств автоматизации, так и без использования средств автоматизации.</span></p>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>3. Ваши персональные данные не распространяются.</span></p>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>4. Трансграничная передача Ваших персональных данных не осуществляется.</span></p>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>5. Адвокат осуществляет обработку персональных данных с целью защиты Ваших прав, свобод и интересов, в том числе для следующих целей:</span></p>
-         <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
-            <ul>
-               <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
-                  <strong><span class="toggle-text" onclick="toggleTable('tableContainer1')" style="font-family:'Times New Roman',serif;">Заключение договора на оказание юридической помощи с гражданами</span></strong>
-               </li>
+        </section>   
+        <div id="personal-data">
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;text-align:center;'><strong><span style='font-family:"Times New Roman",serif;'>ПОЛИТИКА ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ АДВОКАТОМ НЕМЧЕНКО А.А.</span></strong></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>1. В этом документе Вы можете узнать:</span></p>
+            <ul style="list-style-type: disc;">
+               <li><span style='font-family:"Times New Roman",serif;'>для каких целей адвокат обрабатывает Ваши персональные данные, на каком правовом основании;</span></li>
+               <li><span style='font-family:"Times New Roman",serif;'>какие у Вас есть права, связанные с обработкой персональных данных;</span></li>
+               <li><span style='font-family:"Times New Roman",serif;'>как Вы можете реализовать свои права, связанные с обработкой персональных данных.</span></li>
             </ul>
-         </div>
-         <div class="table-container" id="tableContainer1">
-            <table style="border-collapse: collapse; border: none; width: 928px;">
-               <tbody>
-                  <tr>
-                     <td style="width: 274.5pt; border: 1pt solid black; padding: 0cm 5.4pt; height: 15pt; vertical-align: top;">
-                        <p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:'Aptos',sans-serif;">
-                           <span style="font-family:'Times New Roman',serif;">Перечень обрабатываемых персональных данных</span>
-                        </p>
-                     </td>
-                     <td style="width: 291pt; border-top: 1pt solid black; border-right: 1pt solid black; border-bottom: 1pt solid black; padding: 0cm 5.4pt; height: 15pt; vertical-align: top;">
-                        <p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:'Aptos',sans-serif;">
-                           <span style="font-family:'Times New Roman',serif;">Правовое основание обработки персональных данных</span>
-                        </p>
-                     </td>
-                     <td style="width: 130.5pt; border-top: 1pt solid black; border-right: 1pt solid black; border-bottom: 1pt solid black; padding: 0cm 5.4pt; height: 15pt; vertical-align: top;">
-                        <p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:'Aptos',sans-serif;">
-                           <span style="font-family:'Times New Roman',serif;">Срок хранения</span>
-                        </p>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td style="width: 274.5pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; padding: 0cm 5.4pt; height: 15pt; vertical-align: top;">
-                        <p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:'Aptos',sans-serif;">
-                           <span style="font-family:'Times New Roman',serif;">Фамилия, имя, отчество, адрес места жительства (пребывания)</span>
-                        </p>
-                     </td>
-                     <td style="width: 291pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 15pt; vertical-align: top;">
-                        <p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:'Aptos',sans-serif;">
-                           <span style="font-family:'Times New Roman',serif;">Договор, абзац пятнадцатый статьи 6 Закон о защите персональных данных, статья 27 Закона Республики Беларусь от 30.12.2011 N 334-З “Об адвокатуре и адвокатской деятельности в Республике Беларусь” (далее - Закон об адвокатуре)</span>
-                        </p>
-                     </td>
-                     <td style="width: 130.5pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 15pt; vertical-align: top;">
-                        <p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:'Aptos',sans-serif;">
-                           <span style="font-family:'Times New Roman',serif;">3 года после истечения срока действия</span>
-                        </p>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-         </div>
-         <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
-            <ul>
-               <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
-                  <strong><span class="toggle-text" onclick="toggleTable('tableContainer2')" style="font-family:'Times New Roman',serif;">Заключение договора на оказание юридической помощи с индивидуальными предпринимателями</span></strong>
-               </li>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><em><span style='font-family:"Times New Roman",serif;'>Политика обработки персональных данных разрабатывается для исполнения требования Закона Республики Беларусь от 7 мая 2021 г. № 99-З &ldquo;О защите персональных данных&rdquo; (далее - Закон о защите персональных данных).</span></em></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>2. Ваши персональные данные обрабатываются как с использованием средств автоматизации, так и без использования средств автоматизации.</span></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>3. Ваши персональные данные не распространяются.</span></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>4. Трансграничная передача Ваших персональных данных не осуществляется.</span></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>5. Адвокат осуществляет обработку персональных данных с целью защиты Ваших прав, свобод и интересов, в том числе для следующих целей:</span></p>
+            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
+               <ul>
+                  <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
+                     <strong><span class="toggle-text" onclick="toggleTable('tableContainer1')" style="font-family:'Times New Roman',serif;">Заключение договора на оказание юридической помощи с гражданами</span></strong>
+                  </li>
+               </ul>
+            </div>
+            <div class="table-container" id="tableContainer1">
+               <table style="border-collapse: collapse; border: none; width: 928px;">
+                  <tbody>
+                     <tr>
+                        <td style="width: 274.5pt; border: 1pt solid black; padding: 0cm 5.4pt; height: 15pt; vertical-align: top;">
+                           <p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:'Aptos',sans-serif;">
+                              <span style="font-family:'Times New Roman',serif;">Перечень обрабатываемых персональных данных</span>
+                           </p>
+                        </td>
+                        <td style="width: 291pt; border-top: 1pt solid black; border-right: 1pt solid black; border-bottom: 1pt solid black; padding: 0cm 5.4pt; height: 15pt; vertical-align: top;">
+                           <p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:'Aptos',sans-serif;">
+                              <span style="font-family:'Times New Roman',serif;">Правовое основание обработки персональных данных</span>
+                           </p>
+                        </td>
+                        <td style="width: 130.5pt; border-top: 1pt solid black; border-right: 1pt solid black; border-bottom: 1pt solid black; padding: 0cm 5.4pt; height: 15pt; vertical-align: top;">
+                           <p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:'Aptos',sans-serif;">
+                              <span style="font-family:'Times New Roman',serif;">Срок хранения</span>
+                           </p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="width: 274.5pt; border-right: 1pt solid black; border-bottom: 1pt solid black; border-left: 1pt solid black; padding: 0cm 5.4pt; height: 15pt; vertical-align: top;">
+                           <p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:'Aptos',sans-serif;">
+                              <span style="font-family:'Times New Roman',serif;">Фамилия, имя, отчество, адрес места жительства (пребывания)</span>
+                           </p>
+                        </td>
+                        <td style="width: 291pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 15pt; vertical-align: top;">
+                           <p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:'Aptos',sans-serif;">
+                              <span style="font-family:'Times New Roman',serif;">Договор, абзац пятнадцатый статьи 6 Закон о защите персональных данных, статья 27 Закона Республики Беларусь от 30.12.2011 N 334-З “Об адвокатуре и адвокатской деятельности в Республике Беларусь” (далее - Закон об адвокатуре)</span>
+                           </p>
+                        </td>
+                        <td style="width: 130.5pt; border-top: none; border-left: none; border-bottom: 1pt solid black; border-right: 1pt solid black; padding: 0cm 5.4pt; height: 15pt; vertical-align: top;">
+                           <p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:'Aptos',sans-serif;">
+                              <span style="font-family:'Times New Roman',serif;">3 года после истечения срока действия</span>
+                           </p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
+               <ul>
+                  <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
+                     <strong><span class="toggle-text" onclick="toggleTable('tableContainer2')" style="font-family:'Times New Roman',serif;">Заключение договора на оказание юридической помощи с индивидуальными предпринимателями</span></strong>
+                  </li>
+               </ul>
+            </div>
+            <div class="table-container" id="tableContainer2">
+               <table style="border-collapse: collapse;border: none;width: 927px;">
+                  <tbody>
+                     <tr>
+                        <td style="width: 272.25pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
+                        </td>
+                        <td style="width: 291pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
+                        </td>
+                        <td style="width: 132pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="width: 272.25pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Фамилия, имя, отчество, адрес места жительства (пребывания)</span></p>
+                        </td>
+                        <td style="width: 291pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Договор, абзац пятнадцатый статьи 6 Закон о защите персональных данных, статья 27 Закона об адвокатуре</span></p>
+                        </td>
+                        <td style="width: 132pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>3 года после истечения срока действия</span></p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
+               <ul>
+                  <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
+                     <strong><span class="toggle-text" onclick="toggleTable('tableContainer3')" style="font-family:'Times New Roman',serif;">Получение устной консультации по вопросам правового характера</span></strong>
+                  </li>
+               </ul>
+            </div>
+            <div class="table-container" id="tableContainer3">
+               <table style="border-collapse: collapse;border: none;width: 925px;">
+                  <tbody>
+                     <tr>
+                        <td style="width: 270pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
+                        </td>
+                        <td style="width: 294pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
+                        </td>
+                        <td style="width: 129.75pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="width: 270pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Фамилия, имя, отчество, должность лица, уполномоченного на подписание документа</span></p>
+                        </td>
+                        <td style="width: 294pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Договор, абзац пятнадцатый статьи 6 Закон о защите персональных данных, статья 27 Закона об адвокатуре</span></p>
+                        </td>
+                        <td style="width: 129.75pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>3 года после истечения срока действия</span></p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
+               <ul>
+                  <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
+                     <strong><span class="toggle-text" onclick="toggleTable('tableContainer4')" style="font-family:'Times New Roman',serif;">Составление ордера</span></strong>
+                  </li>
+               </ul>
+            </div>
+            <div class="table-container" id="tableContainer4">
+               <table style="border-collapse: collapse;border: none;width: 920px;">
+                  <tbody>
+                     <tr>
+                        <td style="width: 261pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
+                        </td>
+                        <td style="width: 304.5pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
+                        </td>
+                        <td style="width: 124.5pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="width: 261pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Фамилия, инициалы, номер и дата договора на оказание юридической помощи</span></p>
+                        </td>
+                        <td style="width: 304.5pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Для исполнения обязанностей, предусмотренных законодательством в соответствии с абзацем двадцатым 6 Закон о защите персональных данных, а также частью третьей статьи 75 ГПК, пункт 1 части шестой статьи 46 УПК, пункт 4 статьи 4.5 ПиКОАП</span></p>
+                        </td>
+                        <td style="width: 124.5pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>&nbsp;</span></p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
+               <ul>
+                  <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
+                     <strong><span class="toggle-text" onclick="toggleTable('tableContainer5')" style="font-family:'Times New Roman',serif;">Составление доверенности на представление интересов гражданина</span></strong>
+                  </li>
+               </ul>
+            </div>
+            <div class="table-container" id="tableContainer5">
+               <table style="border-collapse: collapse;border: none;width: 922px;">
+                  <tbody>
+                     <tr>
+                        <td style="width: 257.25pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
+                        </td>
+                        <td style="width: 308.25pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
+                        </td>
+                        <td style="width: 126pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="width: 257.25pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Фамилия, имя, отчество, адрес места жительства (пребывания), сведения из документа, удостоверяющего личность</span></p>
+                        </td>
+                        <td style="width: 308.25pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Для исполнения обязанностей, предусмотренных законодательством в соответствии с абзацем двадцатым 6 Закон о защите персональных данных, а также в соответствии со статьей 186 ГК</span></p>
+                        </td>
+                        <td style="width: 126pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>3 года</span></p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
+               <ul>
+                  <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
+                     <strong><span class="toggle-text" onclick="toggleTable('tableContainer6')" style="font-family:'Times New Roman',serif;">Составление доверенности на представление интересов индивидуального предпринимателя</span></strong>
+                  </li>
+               </ul>
+            </div>
+            <div class="table-container" id="tableContainer6">
+               <table style="border-collapse: collapse;border: none;width: 926px;">
+                  <tbody>
+                     <tr>
+                        <td style="width: 258pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
+                        </td>
+                        <td style="width: 308.25pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
+                        </td>
+                        <td style="width: 128.25pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="width: 258pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Фамилия, имя, отчество, адрес места жительства (пребывания), номер свидетельство о государственной регистрации</span></p>
+                        </td>
+                        <td style="width: 308.25pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Для исполнения обязанностей, предусмотренных законодательством в соответствии с абзацем двадцатым 6 Закон о защите персональных данных, а также в соответствии со статьей 186 ГК</span></p>
+                        </td>
+                        <td style="width: 128.25pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>3 года</span></p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
+               <ul>
+                  <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
+                     <strong><span class="toggle-text" onclick="toggleTable('tableContainer7')" style="font-family:'Times New Roman',serif;">Составление искового заявления</span></strong>
+                  </li>
+               </ul>
+            </div>
+            <div class="table-container" id="tableContainer7">
+               <table style="border-collapse: collapse;border: none;width: 933px;">
+                  <tbody>
+                     <tr>
+                        <td style="width: 320.25pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
+                        </td>
+                        <td style="width: 270pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
+                        </td>
+                        <td style="width: 109.5pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="width: 320.25pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:  22.5pt;'><span style='font-family:"Times New Roman",serif;color:#242424;'>Фамилия, им, отчество, место жительства (место пребывания или место нахождения), банковские реквизиты, контактные телефоны, факсы и электронные адреса (при их наличии); обстоятельства, на которых основаны исковые требования;&nbsp;</span><span style='font-family:"Times New Roman",serif;color:black;'>доказательства, подтверждающие основания исковых требований.</span></p>
+                        </td>
+                        <td style="width: 270pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Для исполнения обязанностей, предусмотренных законодательством в соответствии с абзацем двадцатым 6 Закон о защите персональных данных, а также статьей 159&nbsp;</span><br><span style='font-family:"Times New Roman",serif;'>ХПК, статьи 109 и 243 ГПК</span></p>
+                        </td>
+                        <td style="width: 109.5pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>3 года</span></p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
+               <ul>
+                  <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
+                     <strong><span class="toggle-text" onclick="toggleTable('tableContainer8')" style="font-family:'Times New Roman',serif;">Составление жалоб на постановления по делам об административных правонарушениях, апелляционных и кассационных жалоб на решения и приговоры судов, жалоб в порядке надзора по гражданским, экономическим и уголовным делам, и иных сложных правовых документов, в том числе связанных с истребованием адвокатом дополнительных материалов и (или) ознакомлением с дополнительными материалами</span></strong>
+                  </li>
+               </ul>
+            </div>
+            <div class="table-container" id="tableContainer8">
+               <table style="border-collapse: collapse;border: none;width: 929px;">
+                  <tbody>
+                     <tr>
+                        <td style="width: 321.75pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
+                        </td>
+                        <td style="width: 269.25pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
+                        </td>
+                        <td style="width: 105.75pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="width: 321.75pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;color:#242424;'>Фамилия, им, отчество, место жительства (место пребывания или место нахождения), контактные данные, иные сведение, на которых основана подача жалобы</span></p>
+                        </td>
+                        <td style="width: 269.25pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Для исполнения обязанностей, предусмотренных законодательством в соответствии с абзацем двадцатым 6 Закон о защите персональных данных</span></p>
+                        </td>
+                        <td style="width: 105.75pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>На период оказания юридической помощи</span></p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
+               <ul>
+                  <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
+                     <strong><span class="toggle-text" onclick="toggleTable('tableContainer9')" style="font-family:'Times New Roman',serif;">Составление документов правового характера</span></strong>
+                  </li>
+               </ul>
+            </div>
+            <div class="table-container" id="tableContainer9">
+               <table style="border-collapse: collapse;border: none;width: 928px;">
+                  <tbody>
+                     <tr>
+                        <td style="width: 321pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
+                        </td>
+                        <td style="width: 269.25pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
+                        </td>
+                        <td style="width: 105.75pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="width: 321pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;color:#242424;'>Фамилия, им, отчество, место жительства (место пребывания или место нахождения), контактные данные, иные сведение, которые необходимого для составления документа</span></p>
+                        </td>
+                        <td style="width: 269.25pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Для исполнения обязанностей, предусмотренных законодательством в соответствии с абзацем двадцатым 6 Закон о защите персональных данных</span></p>
+                        </td>
+                        <td style="width: 105.75pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>На период оказания юридической помощи</span></p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
+               <ul>
+                  <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
+                     <strong><span class="toggle-text" onclick="toggleTable('tableContainer10')" style="font-family:'Times New Roman',serif;">Ознакомление с материалами уголовного дела</span></strong>
+                  </li>
+               </ul>
+            </div>
+            <div class="table-container" id="tableContainer10">
+               <table style="border-collapse: collapse;border: none;width: 928px;">
+                  <tbody>
+                     <tr>
+                        <td style="width: 321pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
+                        </td>
+                        <td style="width: 217.5pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
+                        </td>
+                        <td style="width: 157.5pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="width: 321pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;color:#242424;'>Фамилия, им, отчество, место жительства (место пребывания или место нахождения), иные сведения, содержащиеся в материалах уголовного дела</span></p>
+                        </td>
+                        <td style="width: 217.5pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Для исполнения обязанностей, предусмотренных законодательством в соответствии с абзацем двадцатым 6 Закон о защите персональных данных, а также в статьями 178-1, 256, 257 УПК</span></p>
+                        </td>
+                        <td style="width: 157.5pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                           <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>На период оказания юридической помощи</span></p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <br>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:center;text-indent:27.0pt;'><strong><u><span style='font-family:"Times New Roman",serif;'>ПРАВА СУБЪЕКТА ПЕРСОНАЛЬНЫХ ДАННЫХ</span></u></strong></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:center;text-indent:27.0pt;'><span style='font-family:"Times New Roman",serif;'>&nbsp;</span></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:27.0pt;'><strong><span style='font-family:"Times New Roman",serif;'>6. Как субъект персональных данных, Вы имеете право</span></strong><span style='font-family:"Times New Roman",serif;'>:</span></p>
+            <ul style="list-style-type: undefined margin-left 21.5px;">
+               <li><u><span style='font-family:"Times New Roman",serif;'>в любое время отозвать свое согласие на обработку персональных данных.</span></u></li>
+               <li><u><span style='font-family:"Times New Roman",serif;'>требовать бесплатного прекращения обработки своих персональных данных, включая их удаление,</span></u></li>
             </ul>
-         </div>
-         <div class="table-container" id="tableContainer2">
-            <table style="border-collapse: collapse;border: none;width: 927px;">
-               <tbody>
-                  <tr>
-                     <td style="width: 272.25pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
-                     </td>
-                     <td style="width: 291pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
-                     </td>
-                     <td style="width: 132pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td style="width: 272.25pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Фамилия, имя, отчество, адрес места жительства (пребывания)</span></p>
-                     </td>
-                     <td style="width: 291pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Договор, абзац пятнадцатый статьи 6 Закон о защите персональных данных, статья 27 Закона об адвокатуре</span></p>
-                     </td>
-                     <td style="width: 132pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>3 года после истечения срока действия</span></p>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-         </div>
-         <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
-            <ul>
-               <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
-                  <strong><span class="toggle-text" onclick="toggleTable('tableContainer3')" style="font-family:'Times New Roman',serif;">Получение устной консультации по вопросам правового характера</span></strong>
-               </li>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:4.5pt;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;'><strong><span style='font-family:"Times New Roman",serif;'>ВАЖНО! </span></strong><em><span style='font-family:"Times New Roman",serif;'>Ваши персональные данные могут быть удалены только в случае, если адвокат не должен их обрабатывать или хранить по закону.</span></em></p>
+            <ul style="list-style-type: undefined margin-left 21.5px;">
+               <li><u><span style='font-family:"Times New Roman",serif;'>получать информацию, касающуюся обработки персональных данных.</span></u></li>
+               <li><u><span style='font-family:"Times New Roman",serif;'>требовать внесения изменений в свои персональные данные.</span></u></li>
             </ul>
-         </div>
-         <div class="table-container" id="tableContainer3">
-            <table style="border-collapse: collapse;border: none;width: 925px;">
-               <tbody>
-                  <tr>
-                     <td style="width: 270pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
-                     </td>
-                     <td style="width: 294pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
-                     </td>
-                     <td style="width: 129.75pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td style="width: 270pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Фамилия, имя, отчество, должность лица, уполномоченного на подписание документа</span></p>
-                     </td>
-                     <td style="width: 294pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Договор, абзац пятнадцатый статьи 6 Закон о защите персональных данных, статья 27 Закона об адвокатуре</span></p>
-                     </td>
-                     <td style="width: 129.75pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>3 года после истечения срока действия</span></p>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-         </div>
-         <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
-            <ul>
-               <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
-                  <strong><span class="toggle-text" onclick="toggleTable('tableContainer4')" style="font-family:'Times New Roman',serif;">Составление ордера</span></strong>
-               </li>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;'><strong><span style='font-family:"Times New Roman",serif;'>ВАЖНО!</span></strong><span style='font-family:"Times New Roman",serif;'>&nbsp;<em>Изменение Ваших персональных данных осуществляется на основании документов и(или) копий документов, которые будут подтверждать, что Ваши данные необходимо обновить.</em></span></p>
+            <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
+               <ul style="margin-bottom:0cm;">
+                  <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><u><span style='font-family:"Times New Roman",serif;'>получать информацию о предоставлении своих персональных данных третьим лицам.&nbsp;</span></u></li>
+               </ul>
+            </div>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:9.0pt;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;'><strong><span style='font-family:"Times New Roman",serif;'>ВАЖНО!</span></strong><span style='font-family:"Times New Roman",serif;'>&nbsp;<em>Такая информация предоставляется за последний календарный год с даты подачи заявления и предоставляется один раз в календарный год бесплатно;</em></span></p>
+            <ul style="list-style-type: undefined margin-left 21.5px;">
+               <li><u><span style='font-family:"Times New Roman",serif;'>обжаловать действия (бездействие) и принятые адвокатом решения, нарушающие Ваши права при обработке персональных данных, в Национальный центр защиты персональных данных Республики Беларусь.</span></u></li>
+               <li><u><span style='font-family:"Times New Roman",serif;'>получать возмещения морального вреда, который Вам был причинен действиями (бездействиями) в отношении Ваших персональных данных, путем обращения с исковым заявлением в суд.</span></u></li>
             </ul>
-         </div>
-         <div class="table-container" id="tableContainer4">
-            <table style="border-collapse: collapse;border: none;width: 920px;">
-               <tbody>
-                  <tr>
-                     <td style="width: 261pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
-                     </td>
-                     <td style="width: 304.5pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
-                     </td>
-                     <td style="width: 124.5pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td style="width: 261pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Фамилия, инициалы, номер и дата договора на оказание юридической помощи</span></p>
-                     </td>
-                     <td style="width: 304.5pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Для исполнения обязанностей, предусмотренных законодательством в соответствии с абзацем двадцатым 6 Закон о защите персональных данных, а также частью третьей статьи 75 ГПК, пункт 1 части шестой статьи 46 УПК, пункт 4 статьи 4.5 ПиКОАП</span></p>
-                     </td>
-                     <td style="width: 124.5pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>&nbsp;</span></p>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-         </div>
-         <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
-            <ul>
-               <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
-                  <strong><span class="toggle-text" onclick="toggleTable('tableContainer5')" style="font-family:'Times New Roman',serif;">Составление доверенности на представление интересов гражданина</span></strong>
-               </li>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:center;'><strong><u><span style='font-family:"Times New Roman",serif;'>КАК РЕАЛИЗОВАТЬ СВОИ ПРАВА</span></u></strong></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:27.0pt;'><span style='font-family:"Times New Roman",serif;'>7. Чтобы реализовать <strong><u>права, указанные в пункте 6</u></strong>,&nbsp;</span></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:27.0pt;'><span style='font-family:"Times New Roman",serif;'>Вам необходимо обратиться к адвокату с <strong><u>ПИСЬМЕННЫМ</u></strong> заявлением.</span></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:27.0pt;'><strong><span style='font-size:27px;font-family:"Times New Roman",serif;'>!</span></strong><span style='font-family:"Times New Roman",serif;'>&nbsp;Заявление должно содержать:</span></p>
+            <ul style="list-style-type: undefined margin-left 44px;">
+               <li><span style='font-family:"Times New Roman",serif;'>фамилию, собственное имя, отчество (если таковое имеется);</span></li>
+               <li><span style='font-family:"Times New Roman",serif;'>адрес места жительства (места пребывания);</span></li>
+               <li><span style='font-family:"Times New Roman",serif;'>дату рождения;</span></li>
+               <li><span style='font-family:"Times New Roman",serif;'>серию, номер, дату и орган выдачи документа, удостоверяющего личность;</span></li>
+               <li><span style='font-family:"Times New Roman",serif;'>изложение сути требований;</span></li>
+               <li><span style='font-family:"Times New Roman",serif;'>личную подпись.</span></li>
             </ul>
-         </div>
-         <div class="table-container" id="tableContainer5">
-            <table style="border-collapse: collapse;border: none;width: 922px;">
-               <tbody>
-                  <tr>
-                     <td style="width: 257.25pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
-                     </td>
-                     <td style="width: 308.25pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
-                     </td>
-                     <td style="width: 126pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td style="width: 257.25pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Фамилия, имя, отчество, адрес места жительства (пребывания), сведения из документа, удостоверяющего личность</span></p>
-                     </td>
-                     <td style="width: 308.25pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Для исполнения обязанностей, предусмотренных законодательством в соответствии с абзацем двадцатым 6 Закон о защите персональных данных, а также в соответствии со статьей 186 ГК</span></p>
-                     </td>
-                     <td style="width: 126pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>3 года</span></p>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-         </div>
-         <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
-            <ul>
-               <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
-                  <strong><span class="toggle-text" onclick="toggleTable('tableContainer6')" style="font-family:'Times New Roman',serif;">Составление доверенности на представление интересов индивидуального предпринимателя</span></strong>
-               </li>
-            </ul>
-         </div>
-         <div class="table-container" id="tableContainer6">
-            <table style="border-collapse: collapse;border: none;width: 926px;">
-               <tbody>
-                  <tr>
-                     <td style="width: 258pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
-                     </td>
-                     <td style="width: 308.25pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
-                     </td>
-                     <td style="width: 128.25pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td style="width: 258pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Фамилия, имя, отчество, адрес места жительства (пребывания), номер свидетельство о государственной регистрации</span></p>
-                     </td>
-                     <td style="width: 308.25pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Для исполнения обязанностей, предусмотренных законодательством в соответствии с абзацем двадцатым 6 Закон о защите персональных данных, а также в соответствии со статьей 186 ГК</span></p>
-                     </td>
-                     <td style="width: 128.25pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>3 года</span></p>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-         </div>
-         <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
-            <ul>
-               <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
-                  <strong><span class="toggle-text" onclick="toggleTable('tableContainer7')" style="font-family:'Times New Roman',serif;">Составление искового заявления</span></strong>
-               </li>
-            </ul>
-         </div>
-         <div class="table-container" id="tableContainer7">
-            <table style="border-collapse: collapse;border: none;width: 933px;">
-               <tbody>
-                  <tr>
-                     <td style="width: 320.25pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
-                     </td>
-                     <td style="width: 270pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
-                     </td>
-                     <td style="width: 109.5pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td style="width: 320.25pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:  22.5pt;'><span style='font-family:"Times New Roman",serif;color:#242424;'>Фамилия, им, отчество, место жительства (место пребывания или место нахождения), банковские реквизиты, контактные телефоны, факсы и электронные адреса (при их наличии); обстоятельства, на которых основаны исковые требования;&nbsp;</span><span style='font-family:"Times New Roman",serif;color:black;'>доказательства, подтверждающие основания исковых требований.</span></p>
-                     </td>
-                     <td style="width: 270pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Для исполнения обязанностей, предусмотренных законодательством в соответствии с абзацем двадцатым 6 Закон о защите персональных данных, а также статьей 159&nbsp;</span><br><span style='font-family:"Times New Roman",serif;'>ХПК, статьи 109 и 243 ГПК</span></p>
-                     </td>
-                     <td style="width: 109.5pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>3 года</span></p>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-         </div>
-         <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
-            <ul>
-               <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
-                  <strong><span class="toggle-text" onclick="toggleTable('tableContainer8')" style="font-family:'Times New Roman',serif;">Составление жалоб на постановления по делам об административных правонарушениях, апелляционных и кассационных жалоб на решения и приговоры судов, жалоб в порядке надзора по гражданским, экономическим и уголовным делам, и иных сложных правовых документов, в том числе связанных с истребованием адвокатом дополнительных материалов и (или) ознакомлением с дополнительными материалами</span></strong>
-               </li>
-            </ul>
-         </div>
-         <div class="table-container" id="tableContainer8">
-            <table style="border-collapse: collapse;border: none;width: 929px;">
-               <tbody>
-                  <tr>
-                     <td style="width: 321.75pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
-                     </td>
-                     <td style="width: 269.25pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
-                     </td>
-                     <td style="width: 105.75pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td style="width: 321.75pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;color:#242424;'>Фамилия, им, отчество, место жительства (место пребывания или место нахождения), контактные данные, иные сведение, на которых основана подача жалобы</span></p>
-                     </td>
-                     <td style="width: 269.25pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Для исполнения обязанностей, предусмотренных законодательством в соответствии с абзацем двадцатым 6 Закон о защите персональных данных</span></p>
-                     </td>
-                     <td style="width: 105.75pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>На период оказания юридической помощи</span></p>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-         </div>
-         <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
-            <ul>
-               <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
-                  <strong><span class="toggle-text" onclick="toggleTable('tableContainer9')" style="font-family:'Times New Roman',serif;">Составление документов правового характера</span></strong>
-               </li>
-            </ul>
-         </div>
-         <div class="table-container" id="tableContainer9">
-            <table style="border-collapse: collapse;border: none;width: 928px;">
-               <tbody>
-                  <tr>
-                     <td style="width: 321pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
-                     </td>
-                     <td style="width: 269.25pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
-                     </td>
-                     <td style="width: 105.75pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td style="width: 321pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;color:#242424;'>Фамилия, им, отчество, место жительства (место пребывания или место нахождения), контактные данные, иные сведение, которые необходимого для составления документа</span></p>
-                     </td>
-                     <td style="width: 269.25pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Для исполнения обязанностей, предусмотренных законодательством в соответствии с абзацем двадцатым 6 Закон о защите персональных данных</span></p>
-                     </td>
-                     <td style="width: 105.75pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>На период оказания юридической помощи</span></p>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-         </div>
-         <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
-            <ul>
-               <li style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:'Aptos',sans-serif;">
-                  <strong><span class="toggle-text" onclick="toggleTable('tableContainer10')" style="font-family:'Times New Roman',serif;">Ознакомление с материалами уголовного дела</span></strong>
-               </li>
-            </ul>
-         </div>
-         <div class="table-container" id="tableContainer10">
-            <table style="border-collapse: collapse;border: none;width: 928px;">
-               <tbody>
-                  <tr>
-                     <td style="width: 321pt;border: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Перечень обрабатываемых персональных данных</span></p>
-                     </td>
-                     <td style="width: 217.5pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Правовое основание обработки персональных данных</span></p>
-                     </td>
-                     <td style="width: 157.5pt;border-top: 1pt solid black;border-right: 1pt solid black;border-bottom: 1pt solid black;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Срок хранения</span></p>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td style="width: 321pt;border-right: 1pt solid black;border-bottom: 1pt solid black;border-left: 1pt solid black;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;color:#242424;'>Фамилия, им, отчество, место жительства (место пребывания или место нахождения), иные сведения, содержащиеся в материалах уголовного дела</span></p>
-                     </td>
-                     <td style="width: 217.5pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>Для исполнения обязанностей, предусмотренных законодательством в соответствии с абзацем двадцатым 6 Закон о защите персональных данных, а также в статьями 178-1, 256, 257 УПК</span></p>
-                     </td>
-                     <td style="width: 157.5pt;border-top: none;border-left: none;border-bottom: 1pt solid black;border-right: 1pt solid black;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
-                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>На период оказания юридической помощи</span></p>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-         </div>
-         <br>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:center;text-indent:27.0pt;'><strong><u><span style='font-family:"Times New Roman",serif;'>ПРАВА СУБЪЕКТА ПЕРСОНАЛЬНЫХ ДАННЫХ</span></u></strong></p>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:center;text-indent:27.0pt;'><span style='font-family:"Times New Roman",serif;'>&nbsp;</span></p>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:27.0pt;'><strong><span style='font-family:"Times New Roman",serif;'>6. Как субъект персональных данных, Вы имеете право</span></strong><span style='font-family:"Times New Roman",serif;'>:</span></p>
-         <ul style="list-style-type: undefined margin-left 21.5px;">
-            <li><u><span style='font-family:"Times New Roman",serif;'>в любое время отозвать свое согласие на обработку персональных данных.</span></u></li>
-            <li><u><span style='font-family:"Times New Roman",serif;'>требовать бесплатного прекращения обработки своих персональных данных, включая их удаление,</span></u></li>
-         </ul>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:4.5pt;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;'><strong><span style='font-family:"Times New Roman",serif;'>ВАЖНО! </span></strong><em><span style='font-family:"Times New Roman",serif;'>Ваши персональные данные могут быть удалены только в случае, если адвокат не должен их обрабатывать или хранить по закону.</span></em></p>
-         <ul style="list-style-type: undefined margin-left 21.5px;">
-            <li><u><span style='font-family:"Times New Roman",serif;'>получать информацию, касающуюся обработки персональных данных.</span></u></li>
-            <li><u><span style='font-family:"Times New Roman",serif;'>требовать внесения изменений в свои персональные данные.</span></u></li>
-         </ul>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;'><strong><span style='font-family:"Times New Roman",serif;'>ВАЖНО!</span></strong><span style='font-family:"Times New Roman",serif;'>&nbsp;<em>Изменение Ваших персональных данных осуществляется на основании документов и(или) копий документов, которые будут подтверждать, что Ваши данные необходимо обновить.</em></span></p>
-         <div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'>
-            <ul style="margin-bottom:0cm;">
-               <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><u><span style='font-family:"Times New Roman",serif;'>получать информацию о предоставлении своих персональных данных третьим лицам.&nbsp;</span></u></li>
-            </ul>
-         </div>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:9.0pt;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;'><strong><span style='font-family:"Times New Roman",serif;'>ВАЖНО!</span></strong><span style='font-family:"Times New Roman",serif;'>&nbsp;<em>Такая информация предоставляется за последний календарный год с даты подачи заявления и предоставляется один раз в календарный год бесплатно;</em></span></p>
-         <ul style="list-style-type: undefined margin-left 21.5px;">
-            <li><u><span style='font-family:"Times New Roman",serif;'>обжаловать действия (бездействие) и принятые адвокатом решения, нарушающие Ваши права при обработке персональных данных, в Национальный центр защиты персональных данных Республики Беларусь.</span></u></li>
-            <li><u><span style='font-family:"Times New Roman",serif;'>получать возмещения морального вреда, который Вам был причинен действиями (бездействиями) в отношении Ваших персональных данных, путем обращения с исковым заявлением в суд.</span></u></li>
-         </ul>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:center;'><strong><u><span style='font-family:"Times New Roman",serif;'>КАК РЕАЛИЗОВАТЬ СВОИ ПРАВА</span></u></strong></p>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:27.0pt;'><span style='font-family:"Times New Roman",serif;'>7. Чтобы реализовать <strong><u>права, указанные в пункте 6</u></strong>,&nbsp;</span></p>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:27.0pt;'><span style='font-family:"Times New Roman",serif;'>Вам необходимо обратиться к адвокату с <strong><u>ПИСЬМЕННЫМ</u></strong> заявлением.</span></p>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:27.0pt;'><strong><span style='font-size:27px;font-family:"Times New Roman",serif;'>!</span></strong><span style='font-family:"Times New Roman",serif;'>&nbsp;Заявление должно содержать:</span></p>
-         <ul style="list-style-type: undefined margin-left 44px;">
-            <li><span style='font-family:"Times New Roman",serif;'>фамилию, собственное имя, отчество (если таковое имеется);</span></li>
-            <li><span style='font-family:"Times New Roman",serif;'>адрес места жительства (места пребывания);</span></li>
-            <li><span style='font-family:"Times New Roman",serif;'>дату рождения;</span></li>
-            <li><span style='font-family:"Times New Roman",serif;'>серию, номер, дату и орган выдачи документа, удостоверяющего личность;</span></li>
-            <li><span style='font-family:"Times New Roman",serif;'>изложение сути требований;</span></li>
-            <li><span style='font-family:"Times New Roman",serif;'>личную подпись.</span></li>
-         </ul>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-indent:22.5pt;'><strong><span style='font-family:"Times New Roman",serif;'>8. Заявление в письменной форме подается по адресу: <span style="color:black;">220073, пр-т Пушкина 44-221 на имя Немченко А.А. или может быть лично вручено адвокату.</span></span></strong></p>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:22.5pt;'><strong><span style='font-family:"Times New Roman",serif;'>9. ОБРАЩАЕМ ВАШЕ ВНИМАНИЕ что, заявления субъектов персональных данных, которые не соответствуют требованиям пункта 7 настоящей Политики, в том числе направленные иными способами (e-mail, телефон, факс и т.п.), НЕ РАССМАТРИВАЮТСЯ по существу.</span></strong></p>
-         <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:22.5pt;'><span style='font-family:"Times New Roman",serif;'>10. За содействием в реализации прав, за разъяснением настоящей Политики и по иным вопросам, касающимся порядка обработки персональных данных адвокатом, Вы можете обратиться, направив письмо на адрес электронной почты: AAN@advokat-nemchenko.by</span></p>
-         <br>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-indent:22.5pt;'><strong><span style='font-family:"Times New Roman",serif;'>8. Заявление в письменной форме подается по адресу: <span style="color:black;">220073, пр-т Пушкина 44-221 на имя Немченко А.А. или может быть лично вручено адвокату.</span></span></strong></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:22.5pt;'><strong><span style='font-family:"Times New Roman",serif;'>9. ОБРАЩАЕМ ВАШЕ ВНИМАНИЕ что, заявления субъектов персональных данных, которые не соответствуют требованиям пункта 7 настоящей Политики, в том числе направленные иными способами (e-mail, телефон, факс и т.п.), НЕ РАССМАТРИВАЮТСЯ по существу.</span></strong></p>
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:22.5pt;'><span style='font-family:"Times New Roman",serif;'>10. За содействием в реализации прав, за разъяснением настоящей Политики и по иным вопросам, касающимся порядка обработки персональных данных адвокатом, Вы можете обратиться, направив письмо на адрес электронной почты: AAN@advokat-nemchenko.by</span></p>            
+            <br>
+        </div>
          <section id="contacts" class="contact">
             <div class="contact-container">
                <h2>Контакты</h2>
