@@ -5,18 +5,12 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Адвокат Немченко Анастасия</title>
       <style>
-         .personal-data {
-            max-width: 1200px;
-            margin: auto;
-            padding: 2rem 1rem;
-         }
          #about {
          display: flex;
          justify-content: space-around;
          align-items: flex-start;
          gap: 20px;
          flex-wrap: wrap;
-         padding: 20px;
          flex-direction: row;
          width: 100%;
          }
@@ -55,9 +49,7 @@
 .personal-data {
     background-color: white;      /* Белый фон */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Слегка темная тень */
-    padding: 20px;                /* Отступы внутри блока */
     border-radius: 8px;           /* Закругленные углы */
-    margin: 20px 0;               /* Отступы сверху и снизу */
     width: 100%;
 }
          /* Стили для скрытия таблицы по умолчанию */
@@ -209,7 +201,6 @@
          }
          #services {
    background-color: #f9f9f9; /* Легкий фон для секции */
-   padding: 3rem 1.5rem;
    text-align: center;
 }
 
@@ -271,12 +262,12 @@
          .contact {
     background: linear-gradient(135deg, #1E1E1E, #444444); /* Градиентный фон */
     color: #ffffff; /* Белый текст */
-    padding: 3rem 1.5rem;
+    padding-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для объемности */
     text-align: center;
     margin-bottom: 0; /* Убираем отступ снизу, чтобы секция прилегала к футеру */
-    width: 99.5%; /* Убедимся, что ширина секции на всю страницу */
+    width: 100%; /* Убедимся, что ширина секции на всю страницу */
 }
          /* Заголовок */
          .contact h2 {
@@ -333,7 +324,6 @@
          color: white;
          text-align: center;
          padding: 1rem 0;
-         width: 100%;
          }
          .hamburger {
          display: none;
@@ -354,6 +344,10 @@
          margin: 0 1rem;
          }
          @media (max-width: 768px) {
+            .service {
+         width: 350px;
+         height: 120px;
+            }
          .contact-info {
          grid-template-columns: 1fr; /* Один столбец */
          }
@@ -428,6 +422,10 @@
          }
          }
          @media (max-width: 480px) {
+            .service {
+         width: 250px;
+         height: 150px;
+            }
          .hamburger {
          display: flex;
          }
