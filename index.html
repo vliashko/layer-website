@@ -65,82 +65,69 @@
          color: #333;
          }
          header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #1E1E1E;
-    color: white;
-}
-
-.header-text {
-    max-width: 60%;
-}
-
-.header-text h1 {
-    font-size: 2.5rem;
-    margin: 0;
-}
-
-.header-text p {
-    font-size: 1.2rem;
-}
-
-.header-image img {
-    max-width: 150px;
-    border-radius: 50%;
-}
-
-.consultation {
-    margin-top: 15px;
-    text-align: center;
-}
-
-.consultation p {
-    font-size: 1.1rem;
-    margin: 5px 0;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.social-icons .icon img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease;
-}
-
-.social-icons .icon img:hover {
-    transform: scale(1.2);
-}
-
-/* Иконки */
-.icon.viber img {
-    background-color: #f5b942;
-    border-radius: 50%;
-    padding: 5px;
-}
-
-.icon.telegram img {
-    background-color: #f5b942;
-    border-radius: 50%;
-    padding: 5px;
-}
-
-.icon.email img {
-    background-color: #f5b942; /* Цвет для Email */
-    border-radius: 50%;
-    padding: 5px;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 20px;
+         background-color: #1E1E1E;
+         color: white;
+         }
+         .header-text {
+         max-width: 60%;
+         }
+         .header-text h1 {
+         font-size: 2.5rem;
+         margin: 0;
+         }
+         .header-text p {
+         font-size: 1.2rem;
+         }
+         .header-image img {
+         max-width: 150px;
+         border-radius: 50%;
+         }
+         .consultation {
+         margin-top: 15px;
+         text-align: center;
+         }
+         .consultation p {
+         font-size: 1.1rem;
+         margin: 5px 0;
+         }
+         .social-icons {
+         display: flex;
+         justify-content: center;
+         gap: 10px;
+         margin-top: 10px;
+         }
+         .social-icons .icon img {
+         width: 30px;
+         height: 30px;
+         transition: transform 0.3s ease;
+         }
+         .social-icons .icon img:hover {
+         transform: scale(1.2);
+         }
+         /* Иконки */
+         .icon.viber img {
+         background-color: #f5b942;
+         border-radius: 50%;
+         padding: 5px;
+         }
+         .icon.telegram img {
+         background-color: #f5b942;
+         border-radius: 50%;
+         padding: 5px;
+         }
+         .icon.email img {
+         background-color: #f5b942; /* Цвет для Email */
+         border-radius: 50%;
+         padding: 5px;
+         }
+         a {
+         color: white;
+         text-decoration: none;
+         }
          nav {
          background-color: #333;
          color: white;
@@ -241,18 +228,24 @@ a {
          }
          /* Контейнер для информации */
          .contact-info {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr); /* Два столбца с равной шириной */
+         gap: 2rem; /* Расстояние между элементами */
+         justify-content: center; /* Центрирование колонок */
+         }
+         /* Колонка */
+         .contact-column {
          display: flex;
-         flex-wrap: wrap; /* Перенос элементов на следующую строку на малых экранах */
-         justify-content: space-evenly;
-         gap: 1.5rem;
-         margin-top: 1.5rem;
+         flex-direction: column; /* Элементы внутри идут друг под другом */
+         gap: 1.5rem; /* Расстояние между элементами */
+         flex: 1 1 300px; /* Автоматическая ширина с минимальной базой 300px */
+         max-width: 300px; /* Ограничение максимальной ширины */
          }
          /* Оформление элементов внутри блока */
          .contact-item {
          background-color: #333333;
          padding: 1.5rem;
          border-radius: 8px;
-         width: 250px; /* Ширина для каждого блока */
          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
          transition: transform 0.3s ease;
          }
@@ -301,6 +294,9 @@ a {
          margin: 0 1rem;
          }
          @media (max-width: 768px) {
+         .contact-info {
+         grid-template-columns: 1fr; /* Один столбец */
+         }
          .hamburger {
          display: flex;
          }
@@ -324,42 +320,35 @@ a {
          display: flex;
          }
          header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .header-text {
-        max-width: 100%;
-    }
-
-    .header-text h1 {
-        font-size: 2rem; /* Уменьшаем размер шрифта для заголовка */
-    }
-
-    .header-text p {
-        font-size: 1rem; /* Уменьшаем размер шрифта для текста */
-    }
-
-    .header-image img {
-        max-width: 120px; /* Уменьшаем размер изображения */
-    }
-
-    .consultation {
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    .social-icons {
-        flex-direction: row;
-        gap: 15px;
-        justify-content: center;
-        margin-top: 15px;
-    }
-
-    .social-icons .icon img {
-        width: 25px; /* Уменьшаем размер иконок */
-        height: 25px;
-    }
+         flex-direction: column;
+         text-align: center;
+         }
+         .header-text {
+         max-width: 100%;
+         }
+         .header-text h1 {
+         font-size: 2rem; /* Уменьшаем размер шрифта для заголовка */
+         }
+         .header-text p {
+         font-size: 1rem; /* Уменьшаем размер шрифта для текста */
+         }
+         .header-image img {
+         max-width: 120px; /* Уменьшаем размер изображения */
+         }
+         .consultation {
+         margin-top: 20px;
+         width: 100%;
+         }
+         .social-icons {
+         flex-direction: row;
+         gap: 15px;
+         justify-content: center;
+         margin-top: 15px;
+         }
+         .social-icons .icon img {
+         width: 25px; /* Уменьшаем размер иконок */
+         height: 25px;
+         }
          .container {
          padding: 1rem;
          }
@@ -401,21 +390,18 @@ a {
          display: flex;
          }
          .header-text h1 {
-        font-size: 1.5rem; /* Еще меньше заголовок */
-    }
-
-    .header-text p {
-        font-size: 0.9rem; /* Еще меньше текст */
-    }
-
-    .social-icons .icon img {
-        width: 20px; /* Уменьшаем иконки еще больше */
-        height: 20px;
-    }
-
-    .consultation p {
-        font-size: 1rem; /* Уменьшаем размер шрифта для текста */
-    }
+         font-size: 1.5rem; /* Еще меньше заголовок */
+         }
+         .header-text p {
+         font-size: 0.9rem; /* Еще меньше текст */
+         }
+         .social-icons .icon img {
+         width: 20px; /* Уменьшаем иконки еще больше */
+         height: 20px;
+         }
+         .consultation p {
+         font-size: 1rem; /* Уменьшаем размер шрифта для текста */
+         }
          .container {
          padding: 1rem;
          }
@@ -438,31 +424,31 @@ a {
       </style>
    </head>
    <body>
-    <header>
-        <div class="header-text">
+      <header>
+         <div class="header-text">
             <h1>АДВОКАТ</h1>
             <p>НЕМЧЕНКО АНАСТАСИЯ АЛЕКСЕЕВНА</p>
             <p>"Моя работа - защита Ваших прав и интересов на профессиональной основе"</p>
-        </div>
-        <div class="header-image">
+         </div>
+         <div class="header-image">
             <img src="advokat.jpg" alt="Адвокат Немченко Анастасия">
-        </div>
-        <div class="consultation">
+         </div>
+         <div class="consultation">
             <p>Для консультации:</p>
             <p>Телефон: <a href="tel:+375291145488">+375 29 114 54 88</a></p>
             <div class="social-icons">
-                <a href="viber://chat?number=+375291145488" class="icon viber" title="Viber">
-                    <img src="viber.png" alt="Viber">
-                </a>
-                <a href="https://t.me/ad_nemchenko" class="icon telegram" title="Telegram">
-                    <img src="telegram.png" alt="Telegram">
-                </a>
-                <a href="mailto:AAN@advokat-nemchenko.by" class="icon email" title="Email">
-                    <img src="apple.png" alt="Email">
-                </a>
+               <a href="viber://chat?number=+375291145488" class="icon viber" title="Viber">
+               <img src="viber.png" alt="Viber">
+               </a>
+               <a href="https://t.me/ad_nemchenko" class="icon telegram" title="Telegram">
+               <img src="telegram.png" alt="Telegram">
+               </a>
+               <a href="mailto:AAN@advokat-nemchenko.by" class="icon email" title="Email">
+               <img src="apple.png" alt="Email">
+               </a>
             </div>
-        </div>
-    </header>    
+         </div>
+      </header>
       <nav>
          <div class="hamburger" onclick="toggleMenu()">
             <div></div>
@@ -498,7 +484,7 @@ a {
                <img src="https://static.tildacdn.biz/tild3864-3539-4564-a336-313737383937/Group_8.svg" alt="Профессионализм">
                <h2>Профессионализм</h2>
                <p>
-                  Оказываю юридическую помощь в различных отраслях права как жителям города Минска, так и других городов Беларуси.
+                  Индивидуальный и профессиональный подход в работе с каждым клиентом основан на многолетнем опыте работы в государственных органах, организациях и частных структурах
                </p>
             </div>
          </section>
@@ -527,8 +513,8 @@ a {
          </section>
          <section id="personal-data">
             <h2>Персональные данные</h2>
-        </section>   
-        <div id="personal-data">
+         </section>
+         <div id="personal-data">
             <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;text-align:center;'><strong><span style='font-family:"Times New Roman",serif;'>ПОЛИТИКА ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ АДВОКАТОМ НЕМЧЕНКО А.А.</span></strong></p>
             <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>1. В этом документе Вы можете узнать:</span></p>
             <ul style="list-style-type: disc;">
@@ -941,9 +927,9 @@ a {
             </ul>
             <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-indent:22.5pt;'><strong><span style='font-family:"Times New Roman",serif;'>8. Заявление в письменной форме подается по адресу: <span style="color:black;">220073, пр-т Пушкина 44-221 на имя Немченко А.А. или может быть лично вручено адвокату.</span></span></strong></p>
             <p style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:22.5pt;'><strong><span style='font-family:"Times New Roman",serif;'>9. ОБРАЩАЕМ ВАШЕ ВНИМАНИЕ что, заявления субъектов персональных данных, которые не соответствуют требованиям пункта 7 настоящей Политики, в том числе направленные иными способами (e-mail, телефон, факс и т.п.), НЕ РАССМАТРИВАЮТСЯ по существу.</span></strong></p>
-            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:22.5pt;'><span style='font-family:"Times New Roman",serif;'>10. За содействием в реализации прав, за разъяснением настоящей Политики и по иным вопросам, касающимся порядка обработки персональных данных адвокатом, Вы можете обратиться, направив письмо на адрес электронной почты: AAN@advokat-nemchenko.by</span></p>            
+            <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;line-height:normal;font-size:16px;font-family:"Aptos",sans-serif;text-align:justify;text-indent:22.5pt;'><span style='font-family:"Times New Roman",serif;'>10. За содействием в реализации прав, за разъяснением настоящей Политики и по иным вопросам, касающимся порядка обработки персональных данных адвокатом, Вы можете обратиться, направив письмо на адрес электронной почты: AAN@advokat-nemchenko.by</span></p>
             <br>
-        </div>
+         </div>
          <section id="contacts" class="contact">
             <div class="contact-container">
                <h2>Контакты</h2>
@@ -954,12 +940,12 @@ a {
                      </p>
                   </div>
                   <div class="contact-item">
+                     <p><strong>Адрес:</strong> г. Минск, ул. В. Хоружей, 15</p>
+                  </div>
+                  <div class="contact-item">
                      <p><strong>Email:</strong> 
                         <a href="mailto:AAN@advokat-nemchenko.by">AAN@advokat-nemchenko.by</a>
                      </p>
-                  </div>
-                  <div class="contact-item">
-                     <p><strong>Адрес:</strong> г. Минск, ул. В. Хоружей, 15</p>
                   </div>
                   <div class="contact-item">
                      <p><strong>Время работы:</strong> 24/7</p>
