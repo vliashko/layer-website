@@ -5,6 +5,11 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Адвокат Немченко Анастасия</title>
       <style>
+         .personal-data {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem 1rem;
+         }
          #about {
          display: flex;
          justify-content: space-around;
@@ -27,6 +32,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
 }
+
 .about-item:hover {
     transform: translateY(-10px);
 }
@@ -46,6 +52,14 @@
     text-align: center;
 }
 
+.personal-data {
+    background-color: white;      /* Белый фон */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Слегка темная тень */
+    padding: 20px;                /* Отступы внутри блока */
+    border-radius: 8px;           /* Закругленные углы */
+    margin: 20px 0;               /* Отступы сверху и снизу */
+    width: 100%;
+}
          /* Стили для скрытия таблицы по умолчанию */
          .table-container {
          display: none;
@@ -66,7 +80,6 @@
          text-decoration: underline; /* Подчеркивание при наведении */
          }
          body {
-         width: 100%;
          font-family: 'Arial', sans-serif;
          margin: 0;
          padding: 0;
@@ -74,36 +87,52 @@
          color: #333;
          }
          header {
-            width: 100%;
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-         padding: 20px;
-         background-color: #1E1E1E;
-         color: white;
-         }
-         .header-text {
-         max-width: 60%;
-         }
-         .header-text h1 {
-         font-size: 2.5rem;
-         margin: 0;
-         }
-         .header-text p {
-         font-size: 1.2rem;
-         }
-         .header-image img {
-         max-width: 150px;
-         border-radius: 50%;
-         }
-         .consultation {
-         margin-top: 15px;
-         text-align: center;
-         }
-         .consultation p {
-         font-size: 1.1rem;
-         margin: 5px 0;
-         }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1E1E1E;
+    color: white;
+}
+
+.header-text {
+    max-width: 60%;
+}
+
+.header-text h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.header-text p {
+    font-size: 1.2rem;
+}
+
+.header-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* Между картинкой и консультацией */
+}
+
+.header-image {
+    flex-shrink: 0; /* Не позволяет изображению сжиматься */
+}
+
+.header-image img {
+    max-width: 180px;
+    border-radius: 10%;
+    border: 2px solid #000;
+}
+
+.consultation {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.consultation p {
+    margin: 5px 0;
+}
          .social-icons {
          display: flex;
          justify-content: center;
@@ -166,7 +195,7 @@
          padding: 2rem 1rem;
          }
          section {
-            width: 100%;
+         width: 100%;
          margin-bottom: 2rem;
          display: flex;
          flex-direction: column;
@@ -240,13 +269,15 @@
 
          /* Контейнер секции */
          .contact {
-         background: linear-gradient(135deg, #1E1E1E, #444444); /* Градиентный фон */
-         color: #ffffff; /* Белый текст */
-         padding: 3rem 1.5rem;
-         border-radius: 10px;
-         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для объемности */
-         text-align: center;
-         }
+    background: linear-gradient(135deg, #1E1E1E, #444444); /* Градиентный фон */
+    color: #ffffff; /* Белый текст */
+    padding: 3rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для объемности */
+    text-align: center;
+    margin-bottom: 0; /* Убираем отступ снизу, чтобы секция прилегала к футеру */
+    width: 99.5%; /* Убедимся, что ширина секции на всю страницу */
+}
          /* Заголовок */
          .contact h2 {
          font-size: 2.5rem;
@@ -455,29 +486,32 @@
    <body>
       <header>
          <div class="header-text">
-            <h1>АДВОКАТ</h1>
-            <p>НЕМЧЕНКО АНАСТАСИЯ АЛЕКСЕЕВНА</p>
-            <p>"Моя работа - защита Ваших прав и интересов на профессиональной основе"</p>
+             <h1>АДВОКАТ</h1>
+             <p>НЕМЧЕНКО АНАСТАСИЯ АЛЕКСЕЕВНА</p>
+             <p>"Моя работа - защита Ваших прав и интересов на профессиональной основе"</p>
          </div>
-         <div class="header-image">
-            <img src="advokat.jpg" alt="Адвокат Немченко Анастасия">
+         <div class="header-content">
+             <div class="header-image">
+                 <img src="advokat.jpg" alt="Адвокат Немченко Анастасия">
+             </div>
+             <div class="consultation">
+                 <p>Для консультации:</p>
+                 <p>Телефон: <a href="tel:+375291145488">+375 29 114 54 88</a></p>
+                 <div class="social-icons">
+                     <a href="viber://chat?number=+375291145488" class="icon viber" title="Viber">
+                         <img src="viber.png" alt="Viber">
+                     </a>
+                     <a href="https://t.me/ad_nemchenko" class="icon telegram" title="Telegram">
+                         <img src="telegram.png" alt="Telegram">
+                     </a>
+                     <a href="mailto:AAN@advokat-nemchenko.by" class="icon email" title="Email">
+                         <img src="apple.png" alt="Email">
+                     </a>
+                 </div>
+             </div>
          </div>
-         <div class="consultation">
-            <p>Для консультации:</p>
-            <p>Телефон: <a href="tel:+375291145488">+375 29 114 54 88</a></p>
-            <div class="social-icons">
-               <a href="viber://chat?number=+375291145488" class="icon viber" title="Viber">
-               <img src="viber.png" alt="Viber">
-               </a>
-               <a href="https://t.me/ad_nemchenko" class="icon telegram" title="Telegram">
-               <img src="telegram.png" alt="Telegram">
-               </a>
-               <a href="mailto:AAN@advokat-nemchenko.by" class="icon email" title="Email">
-               <img src="apple.png" alt="Email">
-               </a>
-            </div>
-         </div>
-      </header>
+     </header>
+     
       <nav>
          <div class="hamburger" onclick="toggleMenu()">
             <div></div>
@@ -547,7 +581,7 @@
          <section id="personal-data">
             <h2>Персональные данные</h2>
          </section>
-         <div id="personal-data">
+         <div class="personal-data" id="personal-data">
             <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;text-align:center;'><strong><span style='font-family:"Times New Roman",serif;'>ПОЛИТИКА ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ АДВОКАТОМ НЕМЧЕНКО А.А.</span></strong></p>
             <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:116%;font-size:16px;font-family:"Aptos",sans-serif;'><span style='font-family:"Times New Roman",serif;'>1. В этом документе Вы можете узнать:</span></p>
             <ul style="list-style-type: disc;">
