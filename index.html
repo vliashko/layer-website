@@ -15,7 +15,7 @@
          flex-direction: row;
          }
          .about-item {
-    background-color: #1E1E1E;
+    background-color: #333;
     padding: 20px;
     border-radius: 10px;
     width: 300px;
@@ -169,53 +169,70 @@
          text-align: center;
          }
          section h2 {
-         color: #1E1E1E;
+         color: #333;
          font-size: 1.8rem;
          margin-bottom: 1rem;
          }
          #services {
-         background-color: #f9f9f9; /* Легкий фон для секции */
-         padding: 3rem 1.5rem;
-         text-align: center;
-         }
-         /* Заголовок секции */
-         #services h2 {
-         font-size: 2.5rem;
-         margin-bottom: 2rem;
-         color: #1E1E1E;
-         text-transform: uppercase;
-         font-weight: bold;
-         letter-spacing: 2px;
-         }
-         /* Контейнер для услуг */
-         .services {
-         display: flex;
-         flex-wrap: wrap;
-         gap: 1.5rem;
-         justify-content: center;
-         margin-top: 2rem;
-         }
-         /* Индивидуальные карточки услуг */
-         .service {
-         background-color: #ffffff;
-         border-radius: 10px;
-         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для объема */
-         padding: 1.5rem;
-         flex: 1 1 calc(33.333% - 1.5rem);
-         transition: transform 0.3s ease, box-shadow 0.3s ease;
-         }
-         /* Эффект наведения на карточку */
-         .service:hover {
-         transform: translateY(-5px); /* Подъем карточки */
-         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Увеличение тени */
-         }
-         /* Заголовки внутри карточек */
-         .service h3 {
-         font-size: 1.5rem;
-         margin-bottom: 1rem;
-         color: #1E1E1E; /* Темный цвет для заголовков */
-         font-weight: bold;
-         }
+   background-color: #f9f9f9; /* Легкий фон для секции */
+   padding: 3rem 1.5rem;
+   text-align: center;
+}
+
+/* Заголовок секции */
+#services h2 {
+   font-size: 2.5rem;
+   margin-bottom: 1rem; /* Уменьшенный отступ для компактности */
+   color: #333;
+   text-transform: uppercase;
+   font-weight: bold;
+   letter-spacing: 2px;
+}
+
+/* Текст под заголовком */
+#services p {
+   font-size: 1.2rem;
+   color: #555555;
+   margin-bottom: 2rem;
+   line-height: 1.6;
+}
+
+/* Контейнер для услуг */
+.services {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+   justify-content: center;
+   margin-top: 2rem;
+}
+
+/* Индивидуальные карточки услуг */
+.service {
+   background-color: #333; /* Темный фон */
+   border-radius: 10px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Более темная тень */
+   padding: 20px;
+   width: 500px; /* Установлен фиксированный размер для выравнивания */
+   height: 100px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   transition: transform 0.3s ease;
+}
+
+/* Эффект наведения на карточку */
+.service:hover {
+   transform: translateY(-10px); /* Подъем карточки */
+}
+
+/* Заголовки внутри карточек */
+.service h3 {
+   font-size: 1.5rem;
+   color: #f5b942; /* Желтые буквы */
+   text-align: center;
+   font-weight: bold;
+}
+
          /* Контейнер секции */
          .contact {
          background: linear-gradient(135deg, #1E1E1E, #444444); /* Градиентный фон */
@@ -499,6 +516,7 @@
          </section>
          <section id="services">
             <h2>Юридическая помощь</h2>
+            <p>Оказываю юридическую помощь жителям города Минска, так и жителям других городов Республики Беларусь</p>
             <div class="services">
                <div class="service">
                   <h3>Уголовные дела</h3>
@@ -520,6 +538,7 @@
                </div>
             </div>
          </section>
+         
          <section id="personal-data">
             <h2>Персональные данные</h2>
          </section>
